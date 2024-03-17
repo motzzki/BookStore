@@ -7,14 +7,10 @@
   font-family: "Lato", sans-serif;
 }
 .main-container {
-  width: 100%;
   display: flex;
   justify-items: center;
   align-items: center;
   flex-direction: column;
-}
-h1 {
-  margin-left: 1rem;
 }
 header {
   width: 50%;
@@ -22,14 +18,34 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
 }
 .list {
   font-size: large;
   font-weight: 700;
   display: flex;
-  padding: 0.7rem;
+  cursor: pointer;
+}
+
+a {
+  display: block;
+  padding: 0.9rem;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  background-color: rgb(192, 192, 192);
 }
 ul {
-  margin: 0.9rem;
+  list-style: none;
+  margin: 0.6rem;
+}
+
+section {
+  width: 50%;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  text-align: center;
+  width: 25%;
 }
