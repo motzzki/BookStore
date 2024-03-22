@@ -8,6 +8,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
+    <script defer src="https://kit.fontawesome.com/c38be22fc6.js" crossorigin="anonymous"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,8 +30,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
         <div class="list">
           <ul>
             <li>
+              
               <a href="#" data-bs-toggle="modal" data-bs-target="#addModal"
-                >Add Book</a
+                ><i class="fa-solid fa-book"></i> Add Book</a
               >
             </li>
           </ul>
@@ -43,7 +45,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
         </div>
       </header>
       <section>
-        <table class="table table-bordered">
+        <table class="table table-striped">
           <thead>
             <tr>
               <th>Title</th>
@@ -53,7 +55,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="align-middle">
             <?php 
                       while($book_data = mysqli_fetch_array($result)){
                         echo " <tr>";
@@ -61,12 +63,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
                         echo "<td>" .$book_data['author']."</td>";
                         echo "<td>" .$book_data['bookCategory']."</td>";
                         echo "<td>" .$book_data['publisher']."</td>";
-                        echo "<td> <button class='btn btn-primary update-btn' 
+                        echo "<td> <button class='btn btn-dark update-btn' 
                         data-bs-toggle='modal' 
                         data-bs-target='#updatemodal'
                         data-book-id='" . $book_data['bookId'] . "' 
                         onclick='updateRow(this)'>Update</button>
-                                  <button class='btn btn-danger'
+                                  <button class='btn btn-dark'
                                   data-book-id='" . $book_data['bookId'] . "'
                                   onclick='confirmDelete(this)'
                                   >Delete</button>
@@ -146,6 +148,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
                 <label for="floatingPassword">Publisher</label>
               </div>
               <div class="modal-footer">
+              <button type="submit" name="submit" class="btn btn-primary">
+                  Add
+                </button>
                 <button
                   type="button"
                   class="btn btn-secondary"
@@ -153,9 +158,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
                 >
                   Close
                 </button>
-                <button type="submit" name="submit" class="btn btn-primary">
-                  Add
-                </button>
+              
               </div>
             </form>
           </div>
@@ -177,7 +180,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Update Modal
+                Update Book
               </h1>
               <button
                 type="button"
@@ -237,15 +240,15 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblbooks ORDER BY bookId DESC");
                   <label for="update-publisher">Publisher</label>
                 </div>
                 <div class="modal-footer">
+                  <button type="submit" name="update-submit" class="btn btn-primary">
+                    Update
+                  </button>
                   <button
                     type="button"
                     class="btn btn-secondary"
                     data-bs-dismiss="modal"
                   >
                     Close
-                  </button>
-                  <button type="submit" name="update-submit" class="btn btn-primary">
-                    Update
                   </button>
                 </div>
               </form>

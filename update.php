@@ -2,10 +2,9 @@
 include_once("database.php");
 
 if(isset($_POST['update-submit'])){
-    // Retrieve the bookId from the form
+    
     $id = $_POST['bookId'];
     
-    // Retrieve other fields from the form
     $title = $_POST["update-title"];
     $category = $_POST["update-category"];
     $author = $_POST["update-author"];

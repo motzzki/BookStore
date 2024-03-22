@@ -6,6 +6,12 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+body {
+  background-image: url(bookbg.jpg);
+  background-size: cover;
+  opacity: 0.95;
+  height: 100vh;
+}
 .main-container {
   display: flex;
   justify-items: center;
@@ -18,12 +24,23 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #eeeeee;
 }
+
 .list {
   font-size: large;
   font-weight: 700;
   display: flex;
   cursor: pointer;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-footer button {
+  width: 100%;
+  border-radius: 25px;
 }
 
 a {
@@ -31,14 +48,25 @@ a {
   padding: 0.9rem;
   height: 100%;
   text-decoration: none;
-  color: black;
+  color: #eeeeee;
 }
 a:hover {
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(80, 80, 80);
 }
 ul {
   list-style: none;
   margin: 0.6rem;
+}
+th {
+  background-color: black !important;
+  color: white !important;
+  padding: 1em !important;
+}
+td {
+  padding: 1em !important;
+}
+table {
+  font-size: 1.2em !important;
 }
 
 section {
